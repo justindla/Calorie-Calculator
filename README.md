@@ -1,5 +1,6 @@
-# Course Project
+# Calorie Calculator
 
-This repository contains code for an interactive web app, created for the _Client-Side Web Development_ course at the UW iSchool.
+Utilizes natural language processing to calculate net calories based on user input of food consumed and exercise done for the day.
+Feel free to type it in natural English!
 
-The site can be viewed at <https://info340a-wi19.github.io/project-justindla/>
+https://justindla.github.io/Calorie-Calculator/
