@@ -1,0 +1,37 @@
+body {
+    background-color: seashell;
+}
+h1 {
+    background-color: lightcyan;
+    padding: .25em;
+    width: 350px;
+    border-style: solid;
+    border-color: pink;
+    border-width: 2px;
+}
+
+h2 {
+    background-color: blanchedalmond;
+    padding: .25em;
+    width: 9em;
+    margin: .5em;
+    text-align: center;
+}
+
+h3, h4 {
+text-decoration: underline;
+}
+
+section {
+    border-style: solid;
+    border-width: 1px;
+    margin-bottom: 1em; 
+}
+
+h1, h2, h3, h4 {
+    border-radius: 15px;
+}
+
+h3, p {
+    padding: .5em;
+}

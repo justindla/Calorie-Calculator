@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="calorie counting interface">
+    <meta name="keywords" content="calorie, calculator">
+    <meta name="author" content="Justin La">
+    <!-- mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- normalize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Sriracha" rel="stylesheet">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- favicon -->
+    <link rel="icon" href="img/favicon.ico" type="img/x-icon">
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="css/appstyle.css">
+    <title>Calorie Calculator</title>
+</head>
+
+<body>
+    <!-- input error -->
+    <div id="exampleModal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Calculation Error!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>You have used unreadable input. Please try again with natural english.</p>
+                </div>
+                <div class="modal-footer">
+                    <button id="return" type="button" class="btn btn-secondary" data-dismiss="modal">Return to
+                        home</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button id="modalButton" type="button" class="btn btn-primary d-none" data-toggle="modal"
+        data-target="#exampleModal">
+    </button>
+    <!-- navbar -->
+    <header>
+        <div class="align mt-2">
+            <i class="fa fa-cog fa-spin d-none" aria-hidden="true"></i>
+        </div>
+        <nav id="nav" class="navbar navbar-expand-lg navbar-light pb-3">
+            <div class="container-fluid">
+                <div id="title " class="align">
+                    <img id="apple" src="img/apple.JPG" alt="apple logo">
+                    <h1 id="calorie" class="d-inline">Calorie <span id="calculator">Calculator</span></h1>
+                </div>
+                <div><a href=""><i id="hamburger" class="fa fa-bars" aria-label="menu"></i></a></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- result -->
+        <section id="total" class="d-none" aria-live="polite">
+            <div id="result" class="jumbotron parallax">
+                <h2 class="text-uppercase text-center text-white mb-5">Net Calories For Today</h2>
+                <div class="container-fluid">
+                    <div class="row text-white">
+                        <div class="col-12 col-md-6">
+                            <h3 class="text-center">Burned</h3>
+                            <p id="burned" class="font-weight-light burned-consumed"></p>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <h3 class="text-center">Consumed</h3>
+                            <p id="consumed" class="font-weight-light burned-consumed slide-top"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="calculation" class="gradient">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12 d-flex">
+                            <div class="align mb-3">
+                                <p class="montserrat">Your net calories for today is</p>
+                                <p id="net" class="burned-consumed slide-top"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="align montserrat mb-3">Want to log your daily data in a calendar? Keep it consistent!</p>
+                    <div class="row">
+                        <div class="align col-12">
+                            <button id="addday" role="button" class="btn btn-primary btn-lg mb-3">Add day to
+                                your log!</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <!-- calculation -->
+            <div id="calculationform">
+                <div id="calculate" class="container">
+                    <p id="what-calculate" class="text-center lead montserrat">What do you want to calculate?</p>
+                    <a href="#new-way">
+                        <div class="text-center"><button role="button" class="btn btn-alert">What is Calorie
+                                Calculator?</button></div>
+                    </a>
+                    <hr>
+                    <p class="text-center lead btn-light">Feel free to use natural language when telling us what you
+                        did. For example, did - "30 mins yoga" and ate - "3 pizzas"
+                    </p>
+                </div>
+                <div id="calcform" class="container-fluid">
+                    <form>
+                        <div class="row">
+                            <div class="col-12 col-md-6 d-flex">
+                                <div class="form-group align mb-3">
+                                    <label for="exercisetext">Exercise</label>
+                                    <textarea id="exercisetext" class="form-control form-control-lg" rows="4" cols="70"
+                                        placeholder="What did you do today?"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 d-flex">
+                                <div class="form-group align mb-3">
+                                    <label for="foodtext">Food</label>
+                                    <textarea id="foodtext" class="form-control form-control-lg" rows="4" cols="70"
+                                        placeholder="What did you eat today?"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 d-flex">
+                                <div class="align form-group row mb-3">
+                                    <label for="dateInput" class="col-12 col-form-label">Date:</label>
+                                    <div class="col-12">
+                                        <input class="form-control" type="date" id="dateInput">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button id="calcbutton" role="button" type="button"
+                            class="btn btn-success btn-block mb-3 align">Calculate!</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section>
+            <!-- jumbotron -->
+            <div id="jumbo" class="jumbotron pb-5">
+                <h2 id="new-way" class="text-uppercase text-center text-black mb-4">a new way to track calories!</h2>
+                <div id="get-started">
+                    <a href="#apple" class="btn btn-info active" role="button" aria-pressed="true">Let's
+                        get started!</a>
+                </div>
+                <div class="container-fluid">
+                    <div class="row text-black">
+                        <div class="col-12 col-md-6">
+                            <h3 class="text-center">What does Calorie Calculator do?</h3>
+                            <p class="font-weight-light montserrat headingfont">A common problem that people trying to
+                                lose or
+                                maintain weight
+                                encounter is the fact
+                                that they might not be considering how large caloric intake plays a part in it.
+                                Exercise and good nutrition do play a part in weight management, but skipping out on or
+                                glossing over calorie intake will be a problem. Although many people do count their
+                                calories, it can be difficult to calculate the amount they lose from exercising. A
+                                problem with counting calories is that not all foods will have a nutrition label, and
+                                googling it every time is a hassle. Another problem that stacks on top of that is
+                                keeping track of consumed and expended calories in one place. Calorie Calculator makes
+                                calorie tracking efficient and easy, with calorie tracking all in one place. </p>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <h3 class="text-center">How will this help me?</h3>
+                            <p class="font-weight-light montserrat headingfont">A good track to lose a pound a
+                                week is to have a net calorie deficit of 500. For example, John - a 5'10, 170 pound, 23
+                                year old male wanted to cut 20 pounds. He wants to do this by making sure the amount of
+                                calories he takes in everyday meets the goal for his desired weight loss. He begins be
+                                making sure to record everything he eats throughout the day, and any exercise he does
+                                at the gym. After googling to find out the amount of calories he ate for the day, he
+                                has no way to calculate the amount of calories he burned from 60 pushups because his
+                                height, weight, and age are too specific to google. Using Calorie Calculator, his
+                                calorie tracking will be made much easier!</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="get-started-lg">
+                    <a href="#apple" class="btn btn-info align active" role="button" aria-pressed="true">Let's
+                        get started!</a>
+                </div>
+            </div>
+        </section>
+        <!-- cards calendar -->
+        <section id="cardList" class="d-none" aria-live="polite">
+            <p class="display-3 align mb-2 d-block">Daily Log</p>
+            <div class="align d-block">
+                <button id="addMore" class="btn btn-success">Add more days</button>
+            </div>
+            <div id="cards">
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-4" role="footer">
+        <div class="container-fluid footertransparent">
+            <div class="row align">
+                <div class="col-md-6">
+                    <span class="copyright">Content provided by &copy; <a
+                            href="https://www.nutritionix.com/business/api">Nutritionix
+                            API 2018</a></span>
+                </div>
+                <div class="col-md-6">
+                    <p class="footertext">Address: Mary Gates Hall, 1851 NE Grant Ln, Seattle, WA 98105</p>
+                    <p class="footertext">Phone: <a href="tel:+2065432100">(206) 543-2100</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.4/fetch.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-promise/4.1.1/es6-promise.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>

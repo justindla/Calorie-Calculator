@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Justin">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Proposal</title>
+</head>
+
+<body>
+    <header>
+        <h1>Stage 0: Project Proposal</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Problem Description</h2>
+            <h3>Overview</h3>
+            <p>A common problem that people trying to lose or maintain weight encounter is the fact that they might not
+                be considering how large caloric intake plays a part in it.
+                <a href="http://www.cnn.com/2010/HEALTH/11/08/twinkie.diet.professor/index.html">
+                    Mark Haub, a human nutrition professor at the Kansas State University demonstrated this concept by
+                    eating either a Twinkie, Doritos, or Oreos every three hours instead of meals.
+                </a>
+                He lost 27 pounds in two months. His premise was that weight loss is dependent on calorie counting, not
+                the nutritional value of food. Exercise and good nutrition do play a part in weight management, but
+                skipping out on or glossing over calorie intake will be a problem. Although many people <em>do</em>
+                count their calories, they only account for the foods they consume, not the amount they lose from
+                exercising. A problem with counting calories is that not all foods will have a nutritioon label, and
+                googling it every time is a hassle. Another problem that stacks on top of that is keeping track of
+                consumed and expended calories in one place. A person would have to have a list, but every time they
+                want to add to it they would have to google the nutritional value of everything they ate, calculate the
+                calories burned, find the net, and record it. This makes calorie tracking while doing weight management
+                very troublesome and inefficient.
+            </p>
+            <h3>Information Technology Problem</h3>
+            <p>Information problems that someone trying to manage their weight with calorie counting might encounter is
+                having a place where they can always find the calories of what they eat, or finding the calories they
+                burned from an exercise. Trying to google how many calories 13 jumping jacks will burn does not yield
+                useful information, and it is hard to find how many calories 4 cobs of corn yield. </p>
+            <h3>Existing Attempts</h3>
+            <p>There are many existing calorie counting applications, such as
+                <a href="https://www.webmd.com/diet/healthtool-food-calorie-counter">this
+                one from WebMD</a> or <a href="http://www.acaloriecounter.com/"> this one from acaloriecounter.com</a>. The main thing these calorie counters are missing is something that will include calories burned, and from what exercises. But, the most important feature that none of these have is calculating net calorie intake. This is especially important can then
+                log their net calorie intake daily in order to maintain a consistency or detect unexpected changes. A
+                good track to lose a pound a week is to have a net calorie deficit of 500. Calculating this will be
+                difficult if everything is not in one place.</p>
+        </section>
+        <section>
+            <h2>App Description</h2>
+            <h3>Users</h3>
+            <p>People who would use this web application are individuals who are serious about their weight management
+                via caloric monitoring. Suppose John, a 5'10, 170 pound, 23 year old male wanted to cut 20 pounds. He
+                wants to do this by making sure the amount of calories he takes in everyday meets the goal for his
+                desired weight loss. He begins be making sure to record everything he eats throughout the day, and any
+                exercise he does at the gym. The average man needs 2500 calories a day to maintain weight, and 2000
+                calories a day to lose a pound a week. He wants to make sure that he has around 2000 calories everyday
+                but wants to eat a healthy and reasonable amount. After googling to find out the amount of calories he
+                ate for the day, he has no way to calculate the amount of calories he burned from 60 pushups because
+                his height, weight, and age are too specific to google. While using this web application, his calorie
+                tracking will be made much easier.</p>
+            <h3>What will they do?</h3>
+            <p>John will be able to input and save his body measurements on his account. From then on, he can input how
+                much and what food he consumed and exercise completed for the day. He will then be shown the net
+                caloric intake, and how they compare to the other days of the month, given that he will do this every
+                day. </p>
+            <h3>How will this web application solve the problem?</h3>
+            <p>This web application will solve Jonh's problem because everything he needs to find out and know are all
+                in one place. When he inputs his body measurements, the calories burned and gained will be displayed
+                accordingly. When he inputs his meals, the caloric intake will be provided. A final net caloric intake
+                is taken and saved into the day that John inputted the data, where he can view and compare his calorie
+                tracking over each month. Now, John does not need to try to google how many calories he is burning from
+                each exercise by googling everything he did with his body measurements and finding scarce results.
+                Additionally, John does not need to google the calories of all the food he ate that day and add it up.</p>
+            <h3>App Functionality</h3>
+            <h4>Flow of Events</h4>
+            <ol>
+                <li>User will visit the website and be prompted to sign up or log in</li>
+                <li>If they select sign up, they will be redirected to a page where they will enter their email,
+                    password, and body dimensions to create an account. If they select log in then they will be
+                    prompted to enter their email and password to log into their account</li>
+                <li>After logging into their account, they will be on the landing page, where there are two input boxes
+                    which has the user put what they ate and what their exercises were for the day.</li>
+                <li> After they submit the data, the net caloric intake is calculated and displayed to them. They can
+                    either reenter the data or add it to their calendar</li>
+                <li>If they add it to their calendar, the net caloric intake value is then added under the day they
+                    calculated it in a calendar where they can access under their profile.</li>
+                <li>On their profile, they can view the calendar, which displays the net caloric intake for that day,
+                    and can click on that day to see what they ate and what exercise they did.</li>
+            </ol>
+        </section>
+    </main>
+</body>
+
+</html>
